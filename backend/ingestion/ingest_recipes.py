@@ -1,8 +1,8 @@
-import argparse, pandas as pd
-from backend.db import db_session
-from backend.models import Recipe
-from backend.rag.retriever import get_embedder, pinecone_index
-from backend.config import Settings
+﻿import argparse, pandas as pd
+from db import db_session
+from models import Recipe
+from rag.retriever import get_embedder, pinecone_index
+from config import Settings
 
 def upsert_pinecone(vectors):
     idx = pinecone_index()

@@ -1,6 +1,6 @@
-from langchain_google_vertexai import ChatVertexAI
+﻿from langchain_google_vertexai import ChatVertexAI
 from langchain_core.messages import SystemMessage, HumanMessage
-from backend.config import Settings
+from config import Settings
 
 _settings = Settings()
 

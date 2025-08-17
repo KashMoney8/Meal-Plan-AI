@@ -1,7 +1,7 @@
-from typing import List
-from backend.db import db_session
-from backend.models import Recipe
-from backend.config import Settings
+﻿from typing import List
+from db import db_session
+from models import Recipe
+from config import Settings
 from langchain_google_vertexai import VertexAIEmbeddings
 from pinecone import Pinecone, ServerlessSpec
 

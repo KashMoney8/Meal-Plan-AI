@@ -1,8 +1,8 @@
-from sqlalchemy import Column, Integer, String, Float, Text, ForeignKey, Boolean, DateTime
+﻿from sqlalchemy import Column, Integer, String, Float, Text, ForeignKey, Boolean, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import JSONB
 from datetime import datetime
-from backend.db import Base
+from db import Base
 
 class User(Base):
     __tablename__ = 'users'

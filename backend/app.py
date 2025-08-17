@@ -1,14 +1,14 @@
-from flask import Flask, request, jsonify
+﻿from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
-from backend.config import Settings
-from backend.db import db_session, init_db
-from backend.models import User, Recipe, UserPreference, Rating, Plan, PlanItem
-from backend.auth import hash_password, verify_password
-from backend.rag.planner import generate_plan, swap_plan_item
-from backend.rag.retriever import get_stratified_onboarding_cards
-from backend.rag.recommender import record_rating_batch
-from backend.analytics import log_event
+from config import Settings
+from db import db_session, init_db
+from models import User, Recipe, UserPreference, Rating, Plan, PlanItem
+from auth import hash_password, verify_password
+from rag.planner import generate_plan, swap_plan_item
+from rag.retriever import get_stratified_onboarding_cards
+from rag.recommender import record_rating_batch
+from analytics import log_event
 
 app = Flask(__name__)
 CORS(app)
@@ -16,8 +16,7 @@ settings = Settings()
 app.config['JWT_SECRET_KEY'] = settings.JWT_SECRET
 jwt = JWTManager(app)
 
-@app.before_first_request
-def setup():
+with app.app_context():
     init_db()
 
 @app.teardown_appcontext

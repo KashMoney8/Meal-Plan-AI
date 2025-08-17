@@ -1,10 +1,10 @@
-from typing import Dict, Any
+﻿from typing import Dict, Any
 import json
-from backend.db import db_session
-from backend.models import Plan, PlanItem, Recipe, UserPreference
-from backend.rag.retriever import hybrid_retrieve
-from backend.rag.llm import simple_completion
-from backend.rag.prompts import PLAN_SYSTEM, PLAN_USER_TEMPLATE
+from db import db_session
+from models import Plan, PlanItem, Recipe, UserPreference
+from rag.retriever import hybrid_retrieve
+from rag.llm import simple_completion
+from rag.prompts import PLAN_SYSTEM, PLAN_USER_TEMPLATE
 
 def _recipe_to_candidate(r: Recipe) -> Dict[str, Any]:
     return {
